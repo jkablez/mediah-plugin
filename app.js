@@ -23,10 +23,8 @@ async function init() {
       this.sidebar = document.querySelector(".sidebar");
 
       this.elements.root.addEventListener("click", () => {
-        site.handleToggled = !site.handleToggled;
-        console.log("Side Bar Toggled:", site.handleToggled);
-
-        if (site.handleToggled) {
+        site.ishandleGrab = !site.ishandleGrab;
+        if (site.ishandleGrab) {
           this.sidebar.style.left = "-270px";
           this.sidebar.style.position = "absolute";
         } else {
@@ -50,7 +48,6 @@ async function init() {
     }
   }
 
-  site.handleToggled = site.handleToggled ?? false;
   var handleButton = new Handle();
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
