@@ -34,7 +34,6 @@ class Handle {
         this.sidebar.style.left = "unset";
         this.sidebar.style.position = "unset";
       }
-      site.showAlert(this.toggled, "success")
     })
 
     this.sidebar.appendChild(this.elements.root);
