@@ -27,8 +27,8 @@ class Handle {
       this.toggled = !this.toggled;
       console.log(this.toggled)
       if (this.toggled) {
-        this.sidebar.style.left = "-19.5%";
-        this.sidebar.style.position = "absolute";
+        this.sidebar.style.left = "-19.5% !important";
+        this.sidebar.style.position = "absolute !important";
       }
       else {
         this.sidebar.style.left = "unset";
