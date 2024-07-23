@@ -21,8 +21,6 @@ async function init() {
       this.elements = {};
       this.elements.root = this.createRoot();
 
-      console.log(this.site)
-
       this.sidebar = document.querySelector(".sidebar");
 
       this.elements.root.addEventListener("click", () => {
