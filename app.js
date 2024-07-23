@@ -23,6 +23,8 @@ class Handle {
     this.toggled = site.handleToggled || true;
     this.sidebar = document.querySelector(".sidebar");
 
+    console.log(site.handleToggled)
+
     this.elements.root.addEventListener("click", () => {
       site.handleToggled = !site.handleToggled;
       if (site.handleToggled) {
@@ -48,6 +50,8 @@ class Handle {
     `).firstElementChild;
   }
 }
+
+console.log(site.ishandleHidden)
 
 var handleButton = new Handle();
 var isHidden = site.ishandleHidden || true;
