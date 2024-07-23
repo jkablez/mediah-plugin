@@ -25,7 +25,6 @@ class Handle {
 
     this.elements.root.addEventListener("click", () => {
       this.toggled = !this.toggled;
-      console.log(this.toggled);
       if (this.toggled) {
         this.sidebar.style.left = "-270px";
         this.sidebar.style.position = "absolute";
