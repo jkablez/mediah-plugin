@@ -20,12 +20,12 @@ class Handle {
     this.elements = {};
     this.elements.root = this.createRoot();
 
-    this.toggled = false;
+    this.toggled = site.handleToggled || false;
     this.sidebar = document.querySelector(".sidebar");
 
     this.elements.root.addEventListener("click", () => {
-      this.toggled = !this.toggled;
-      if (this.toggled) {
+      site.handleToggled = !site.handleToggled;
+      if (site.handleToggled) {
         this.sidebar.style.left = "-270px";
         this.sidebar.style.position = "absolute";
       } else {
