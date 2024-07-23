@@ -14,7 +14,7 @@ if (location.pathname === "/dashboard") {
 }
 
 var toggled = false;
-this.elements.root.querySelector("#toggle-handle").addEventListener("click", () => {
+document.querySelector("#toggle-handle").addEventListener("click", () => {
   toggled = ! toggled;
   console.log(`Handle Toggled => ${toggled}`)
 })
