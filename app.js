@@ -21,6 +21,7 @@ class Handle {
     this.elements.root = this.createRoot();
 
     this.sidebar = document.querySelector(".sidebar");
+    site.handleToggled = site.handleToggled ?? true;
 
     this.elements.root.addEventListener("click", () => {
       site.handleToggled = !site.handleToggled;
