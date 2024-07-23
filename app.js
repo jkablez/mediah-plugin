@@ -50,7 +50,7 @@ class Handle {
 }
 
 var handleButton = new Handle();
-var isHidden = site.ishandleHidden || false;
+var isHidden = site.ishandleHidden || true;
 
 document.querySelector("#toggle-handle").addEventListener("click", () => {
   site.ishandleHidden = !site.ishandleHidden;
