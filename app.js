@@ -53,8 +53,8 @@ async function init() {
     }
   }
 
-  var handleButton = new Handle();
   site.handleToggled = site.handleToggled ?? false;
+  var handleButton = new Handle();
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
     site.ishandleHidden = !site.ishandleHidden;
