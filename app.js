@@ -51,7 +51,7 @@ async function init() {
     }
   }
 
-  site.ishandleGrab = site.ishandleGrab ?? true;
+  site.ishandleGrab = site.ishandleGrab ?? false;
   var handleButton = new Handle(site);
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
