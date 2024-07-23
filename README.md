@@ -1,8 +1,2 @@
-# mediah-plugin
-A basic mediah plugin
-
-[cool](https://google.com)
-
-> cool text
-
-## hi
+# Side Bar Tweak
+Adds the ability to shrink the sidebar on desktop
