@@ -13,6 +13,8 @@ if (location.pathname === "/dashboard") {
   this.showAlert("Injected Side Bar Tweaks!", "success")
 }
 
+const site = this;
+
 class Handle {
   constructor() {
     this.elements = {};
