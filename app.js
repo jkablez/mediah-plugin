@@ -20,14 +20,10 @@ class Handle {
     this.elements = {};
     this.elements.root = this.createRoot();
 
-    this.toggled = site.handleToggled ?? true;
     this.sidebar = document.querySelector(".sidebar");
 
-    console.log(site.handleToggled);
-
     this.elements.root.addEventListener("click", () => {
-      this.toggled = !this.toggled;
-      site.handleToggled = this.toggled;
+      site.handleToggled = !site.handleToggled;
 
       if (this.toggled) {
         this.sidebar.style.left = "-270px";
@@ -54,7 +50,6 @@ class Handle {
 }
 
 var handleButton = new Handle();
-var isHidden = site.ishandleHidden ?? true;
 
 document.querySelector("#toggle-handle").addEventListener("click", () => {
   site.ishandleHidden = !site.ishandleHidden;
