@@ -21,14 +21,23 @@ class Handle {
     this.elements.root = this.createRoot();
 
     this.toggled = false;
+    this.sidebar = document.querySelector(".sidebar");
 
     this.elements.root.addEventListener("click", () => {
       this.toggled = !this.toggled;
       console.log(this.toggled)
+      if (this.toggled) {
+        this.sidebar.style.left = "-19.5%";
+        this.sidebar.classList.add("absolute");
+      }
+      else {
+        this.sidebar.style.left = "unset";
+        this.sidebar.classList.remove("absolute");
+      }
       site.showAlert(this.toggled, "success")
     })
 
-    document.querySelector(".sidebar").appendChild(this.elements.root);
+    this.sidebar.appendChild(this.elements.root);
   }
 
   createRoot() {
