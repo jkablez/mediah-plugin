@@ -13,12 +13,11 @@ if (location.pathname === "/dashboard") {
   this.showAlert("Injected Side Bar Tweaks!", "success");
 }
 
-const site = this;
-console.log(site)
+var app = await import("/static/js/app.js")
+const site = await app.site;
 
 class Handle {
-  constructor(site) {
-    this.site = site;
+  constructor() {
     this.elements = {};
     this.elements.root = this.createRoot();
 
