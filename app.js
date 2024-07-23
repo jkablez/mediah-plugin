@@ -28,11 +28,11 @@ class Handle {
       console.log(this.toggled)
       if (this.toggled) {
         this.sidebar.style.left = "-19.5%";
-        this.sidebar.classList.add("absolute");
+        this.sidebar.style.position = "absolute";
       }
       else {
         this.sidebar.style.left = "unset";
-        this.sidebar.classList.remove("absolute");
+        this.sidebar.style.position = "unset";
       }
       site.showAlert(this.toggled, "success")
     })
