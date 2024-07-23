@@ -48,6 +48,7 @@ async function init() {
     }
   }
 
+  site.handleToggled = site.handleToggled ?? true;
   var handleButton = new Handle();
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
