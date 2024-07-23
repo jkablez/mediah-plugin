@@ -25,16 +25,15 @@ class Handle {
 
     this.elements.root.addEventListener("click", () => {
       this.toggled = !this.toggled;
-      console.log(this.toggled)
+      console.log(this.toggled);
       if (this.toggled) {
-        this.sidebar.style.left = "-270px !important";
-        this.sidebar.style.position = "absolute !important";
+        this.sidebar.style.left = "-270px";
+        this.sidebar.style.position = "absolute";
+      } else {
+        this.sidebar.style.left = "";
+        this.sidebar.style.position = "";
       }
-      else {
-        this.sidebar.style.left = "unset";
-        this.sidebar.style.position = "unset";
-      }
-    })
+    });
 
     this.sidebar.appendChild(this.elements.root);
   }
