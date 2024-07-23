@@ -14,9 +14,11 @@ if (location.pathname === "/dashboard") {
 }
 
 const site = this;
+console.log(site)
 
 class Handle {
-  constructor() {
+  constructor(site) {
+    this.site = site;
     this.elements = {};
     this.elements.root = this.createRoot();
 
