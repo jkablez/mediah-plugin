@@ -1,5 +1,3 @@
-console.log("Side Bar Tweaks");
-
 this.addSideBarGroup("Side Bar Tweaks", [
   {
     label: "Toggle Handle",
@@ -24,10 +22,9 @@ async function init() {
 
       this.sidebar = document.querySelector(".sidebar");
 
-      console.log(site.handleToggled);
-
       this.elements.root.addEventListener("click", () => {
         site.handleToggled = !site.handleToggled;
+        console.log("Side Bar Toggled:", site.handleToggled);
 
         if (site.handleToggled) {
           this.sidebar.style.left = "-270px";
