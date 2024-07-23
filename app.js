@@ -12,3 +12,9 @@ this.addSideBarGroup("Side Bar Tweaks", [
 if (location.pathname === "/dashboard") {
   this.showAlert("Injected Side Bar Tweaks!", "success")
 }
+
+var toggled = false;
+this.elements.root.querySelector("#toggle-handle").addEventListener("click", () => {
+  toggled = ! toggled;
+  console.log(`Handle Toggled => ${toggled}`)
+})
