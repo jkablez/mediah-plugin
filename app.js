@@ -23,6 +23,8 @@ class Handle {
     this.sidebar = document.querySelector(".sidebar");
     site.handleToggled = site.handleToggled ?? true;
 
+    console.log(site.handleToggled);
+
     this.elements.root.addEventListener("click", () => {
       site.handleToggled = !site.handleToggled;
 
