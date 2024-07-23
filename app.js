@@ -16,20 +16,20 @@ if (location.pathname === "/dashboard") {
 async function init() {
   var app = await import("/static/js/app.js")
   const site = await app.site;
-  
+
   class Handle {
     constructor() {
       this.elements = {};
       this.elements.root = this.createRoot();
-  
+
       this.sidebar = document.querySelector(".sidebar");
-      site.handleToggled = site.handleToggled ?? true;
-  
+      site.handleToggled = site.handleToggled ?? false;
+
       console.log(site.handleToggled);
-  
+
       this.elements.root.addEventListener("click", () => {
         site.handleToggled = !site.handleToggled;
-  
+
         if (site.handleToggled) {
           this.sidebar.style.left = "-270px";
           this.sidebar.style.position = "absolute";
@@ -38,14 +38,14 @@ async function init() {
           this.sidebar.style.position = "";
         }
       });
-  
+
       this.sidebar.appendChild(this.elements.root);
     }
-  
+
     createRoot() {
       const range = document.createRange();
       range.selectNode(document.body);
-  
+
       return range.createContextualFragment(`
         <button class="h-6 cursor-pointer text-muted-foreground rounded-md bg-background border flex items-center justify-center absolute -right-2 top-0 bottom-0 my-auto ${site.ishandleHidden ? 'hidden' : ''}">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>
@@ -53,9 +53,9 @@ async function init() {
       `).firstElementChild;
     }
   }
-  
+
   var handleButton = new Handle();
-  
+
   document.querySelector("#toggle-handle").addEventListener("click", () => {
     site.ishandleHidden = !site.ishandleHidden;
     if (site.ishandleHidden) {
