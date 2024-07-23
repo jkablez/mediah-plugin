@@ -23,7 +23,6 @@ async function init() {
       this.elements.root = this.createRoot();
 
       this.sidebar = document.querySelector(".sidebar");
-      site.handleToggled = site.handleToggled ?? false;
 
       console.log(site.handleToggled);
 
@@ -55,6 +54,7 @@ async function init() {
   }
 
   var handleButton = new Handle();
+  site.handleToggled = site.handleToggled ?? false;
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
     site.ishandleHidden = !site.ishandleHidden;
