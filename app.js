@@ -1,4 +1,4 @@
-console.log("Side Bar Tweaks")
+console.log("Side Bar Tweaks");
 
 this.addSideBarGroup("Side Bar Tweaks", [
   {
@@ -7,10 +7,10 @@ this.addSideBarGroup("Side Bar Tweaks", [
     id: "toggle-handle",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 -mt-[1px]"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>`
   }
-])
+]);
 
 if (location.pathname === "/dashboard") {
-  this.showAlert("Injected Side Bar Tweaks!", "success")
+  this.showAlert("Injected Side Bar Tweaks!", "success");
 }
 
 const site = this;
@@ -20,14 +20,16 @@ class Handle {
     this.elements = {};
     this.elements.root = this.createRoot();
 
-    this.toggled = site.handleToggled || true;
+    this.toggled = site.handleToggled ?? true;
     this.sidebar = document.querySelector(".sidebar");
 
-    console.log(site.handleToggled)
+    console.log(site.handleToggled);
 
     this.elements.root.addEventListener("click", () => {
-      site.handleToggled = !site.handleToggled;
-      if (site.handleToggled) {
+      this.toggled = !this.toggled;
+      site.handleToggled = this.toggled;
+
+      if (this.toggled) {
         this.sidebar.style.left = "-270px";
         this.sidebar.style.position = "absolute";
       } else {
@@ -44,24 +46,23 @@ class Handle {
     range.selectNode(document.body);
 
     return range.createContextualFragment(`
-      <button class="h-6 cursor-pointer text-muted-foreground rounded-md bg-background border flex items-center justify-center absolute -right-2 top-0 bottom-0 my-auto hidden">
+      <button class="h-6 cursor-pointer text-muted-foreground rounded-md bg-background border flex items-center justify-center absolute -right-2 top-0 bottom-0 my-auto ${site.ishandleHidden ? 'hidden' : ''}">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>
       </button>  
     `).firstElementChild;
   }
 }
 
-console.log(site.ishandleHidden)
+console.log(site.ishandleHidden);
 
 var handleButton = new Handle();
-var isHidden = site.ishandleHidden || true;
+var isHidden = site.ishandleHidden ?? true;
 
 document.querySelector("#toggle-handle").addEventListener("click", () => {
   site.ishandleHidden = !site.ishandleHidden;
   if (site.ishandleHidden) {
     handleButton.elements.root.classList.add("hidden");
-  }
-  else {
+  } else {
     handleButton.elements.root.classList.remove("hidden");
   }
-})
+});
