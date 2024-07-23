@@ -16,15 +16,18 @@ async function init() {
   const site = await app.site;
 
   class Handle {
-    constructor() {
+    constructor(site) {
+      this.site = site;
       this.elements = {};
       this.elements.root = this.createRoot();
+
+      console.log(this.site)
 
       this.sidebar = document.querySelector(".sidebar");
 
       this.elements.root.addEventListener("click", () => {
-        site.ishandleGrab = !site.ishandleGrab;
-        if (site.ishandleGrab) {
+        this.site.ishandleGrab = !this.site.ishandleGrab;
+        if (this.site.ishandleGrab) {
           this.sidebar.style.left = "-270px";
           this.sidebar.style.position = "absolute";
         } else {
@@ -49,7 +52,7 @@ async function init() {
   }
 
   site.handleToggled = site.handleToggled ?? true;
-  var handleButton = new Handle();
+  var handleButton = new Handle(site);
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
     site.ishandleHidden = !site.ishandleHidden;
