@@ -20,7 +20,7 @@ class Handle {
     this.elements = {};
     this.elements.root = this.createRoot();
 
-    this.toggled = site.handleToggled || false;
+    this.toggled = site.handleToggled || true;
     this.sidebar = document.querySelector(".sidebar");
 
     this.elements.root.addEventListener("click", () => {
