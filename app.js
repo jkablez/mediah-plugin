@@ -20,14 +20,14 @@ class Handle {
     this.elements = {};
     this.elements.root = this.createRoot();
 
-    this.toggled = site.handleToggled ?? true;
+    this.toggled = localStorage.getItem("side-bar-tweaks") ?? true;
     this.sidebar = document.querySelector(".sidebar");
 
     console.log(site.handleToggled);
 
     this.elements.root.addEventListener("click", () => {
       this.toggled = !this.toggled;
-      site.handleToggled = this.toggled;
+      localStorage.setItem("side-bar-tweaks", this.toggled);
 
       if (this.toggled) {
         this.sidebar.style.left = "-270px";
@@ -53,14 +53,13 @@ class Handle {
   }
 }
 
-console.log(site.ishandleHidden);
-
 var handleButton = new Handle();
-var isHidden = site.ishandleHidden ?? true;
+var isHidden = this.toggled = localStorage.getItem("side-bar-tweaks-view") ?? true;;
 
 document.querySelector("#toggle-handle").addEventListener("click", () => {
-  site.ishandleHidden = !site.ishandleHidden;
-  if (site.ishandleHidden) {
+  isHidden = !isHidden;
+  localStorage.setItem("side-bar-tweaks-view", isHidden)
+  if (isHidden) {
     handleButton.elements.root.classList.add("hidden");
   } else {
     handleButton.elements.root.classList.remove("hidden");
