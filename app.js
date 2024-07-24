@@ -55,14 +55,15 @@ async function init() {
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
     handleHidden = !handleHidden;
+    
     if (handleHidden) {
       handleButton.elements.root.classList.add("hidden");
     } else {
       handleButton.elements.root.classList.remove("hidden");
     }
-  });
 
-  saveStorage("handleHidden", handleHidden);
+    saveStorage("handleHidden", handleHidden);
+  });
 }
 
 init();
