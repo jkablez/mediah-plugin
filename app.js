@@ -1,4 +1,4 @@
-this.addSideBarGroup("Side Bar Tweaks", [
+this.sideBarEdit("Side Bar Tweaks", [
   {
     label: "Toggle Handle",
     button: true,
