@@ -27,16 +27,11 @@ async function init() {
       console.log(this.isHandleGrab);
 
       this.elements.root.addEventListener("click", () => {
+        setWidth();
         saveStorage("isHandleGrab", this.isHandleGrab);
-        this.isHandleGrab = !this.isHandleGrab; // Toggle state
-        if (this.isHandleGrab) {
-          this.sidebar.style.left = "-270px";
-          this.sidebar.style.position = "absolute";
-        } else {
-          this.sidebar.style.left = "";
-          this.sidebar.style.position = "";
-        }
       });
+      
+      setWidth();
 
       this.sidebar.appendChild(this.elements.root);
     }
@@ -50,6 +45,17 @@ async function init() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>
             </button>
         `).firstElementChild;
+    }
+
+    setWidth() {
+      this.isHandleGrab = !this.isHandleGrab;
+      if (this.isHandleGrab) {
+        this.sidebar.style.left = "-270px";
+        this.sidebar.style.position = "absolute";
+      } else {
+        this.sidebar.style.left = "";
+        this.sidebar.style.position = "";
+      }
     }
   }
 
