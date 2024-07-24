@@ -22,7 +22,7 @@ async function init() {
       this.elements.root = this.createRoot();
 
       this.sidebar = document.querySelector(".sidebar");
-      this.isHandleGrab = getStorage("isHandleGrab") || false; // Ensure default value if storage is null
+      this.isHandleGrab = getStorage("isHandleGrab") || false;
 
       console.log(this.isHandleGrab);
 
@@ -59,8 +59,8 @@ async function init() {
     }
   }
 
-  const handleButton = new Handle({ handleHidden: getStorage("handleHidden") || false }); // Ensure default value if storage is null
-  let handleHidden = getStorage("handleHidden") || false; // Ensure default value if storage is null
+  const handleButton = new Handle({ handleHidden: getStorage("handleHidden") || false });
+  let handleHidden = getStorage("handleHidden") || false;
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
     handleHidden = !handleHidden;
