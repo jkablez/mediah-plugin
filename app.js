@@ -27,6 +27,7 @@ async function init() {
       console.log(this.isHandleGrab);
 
       this.elements.root.addEventListener("click", () => {
+        this.isHandleGrab = !this.isHandleGrab;
         this.setWidth();
         saveStorage("isHandleGrab", this.isHandleGrab);
       });
@@ -48,7 +49,6 @@ async function init() {
     }
 
     setWidth() {
-      this.isHandleGrab = !this.isHandleGrab;
       if (this.isHandleGrab) {
         this.sidebar.style.left = "-270px";
         this.sidebar.style.position = "absolute";
