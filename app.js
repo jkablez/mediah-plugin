@@ -84,4 +84,4 @@ class Page {
   }
 }
 
-this.newPage("/side-bar-tweaks", "Side Bar Tweaks", Page);
+newPage("/side-bar-tweaks", "Side Bar Tweaks", Page);
