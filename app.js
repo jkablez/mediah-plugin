@@ -22,16 +22,17 @@ async function init() {
       this.elements.root = this.createRoot();
 
       this.sidebar = document.querySelector(".sidebar");
+      this.isHandleGrab = getStorage("isHandleGrab");
 
       this.elements.root.addEventListener("click", () => {
-        this.site.ishandleGrab = !this.site.ishandleGrab;
-        if (this.site.ishandleGrab) {
+        if (this.isHandleGrab) {
           this.sidebar.style.left = "-270px";
           this.sidebar.style.position = "absolute";
         } else {
           this.sidebar.style.left = "";
           this.sidebar.style.position = "";
         }
+        saveStorage("isHandleGrab", this.isHandleGrab)
       });
 
       this.sidebar.appendChild(this.elements.root);
@@ -49,17 +50,19 @@ async function init() {
     }
   }
 
-  site.ishandleGrab = site.ishandleGrab ?? false;
   var handleButton = new Handle(site);
+  var handleHidden = getStorage("handleHidden");
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
-    site.ishandleHidden = !site.ishandleHidden;
-    if (site.ishandleHidden) {
+    handleHidden = !handleHidden;
+    if (handleHidden) {
       handleButton.elements.root.classList.add("hidden");
     } else {
       handleButton.elements.root.classList.remove("hidden");
     }
   });
+
+  saveStorage("handleHidden", handleHidden);
 }
 
 init();
