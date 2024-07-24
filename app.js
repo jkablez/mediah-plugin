@@ -27,6 +27,7 @@ async function init() {
       console.log(this.isHandleGrab);
 
       this.elements.root.addEventListener("click", () => {
+        saveStorage("isHandleGrab", this.isHandleGrab);
         this.isHandleGrab = !this.isHandleGrab; // Toggle state
         if (this.isHandleGrab) {
           this.sidebar.style.left = "-270px";
@@ -35,7 +36,6 @@ async function init() {
           this.sidebar.style.left = "";
           this.sidebar.style.position = "";
         }
-        saveStorage("isHandleGrab", this.isHandleGrab);
       });
 
       this.sidebar.appendChild(this.elements.root);
