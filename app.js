@@ -67,3 +67,21 @@ document.querySelector("#toggle-handle").addEventListener("click", () => {
 
   saveStorage("handleHidden", handleHidden);
 });
+
+class Page {
+  constructor() {
+    this.elements = {};
+    this.elements.root = this.createRoot();
+  }
+
+  createRoot() {
+    const range = document.createRange();
+    range.selectNode(document.body);
+
+    return range.createContextualFragment(`
+      <h1>Side Bar Tweaks Page 🔥🔥🔥🔥</h1>
+    `).firstElementChild;
+  }
+}
+
+this.newPage("/side-bar-tweaks", "Side Bar Tweaks", Page);
