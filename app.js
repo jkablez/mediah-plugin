@@ -27,11 +27,11 @@ async function init() {
       console.log(this.isHandleGrab);
 
       this.elements.root.addEventListener("click", () => {
-        setWidth();
+        this.setWidth();
         saveStorage("isHandleGrab", this.isHandleGrab);
       });
-      
-      setWidth();
+
+      this.setWidth();
 
       this.sidebar.appendChild(this.elements.root);
     }
