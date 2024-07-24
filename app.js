@@ -20,8 +20,6 @@ class Handle {
     this.sidebar = document.querySelector(".sidebar");
     this.isHandleGrab = getStorage("isHandleGrab") || false;
 
-    console.log(this.isHandleGrab);
-
     this.elements.root.addEventListener("click", () => {
       this.isHandleGrab = !this.isHandleGrab;
       this.setWidth();
@@ -60,7 +58,6 @@ let handleHidden = getStorage("handleHidden") || false;
 
 document.querySelector("#toggle-handle").addEventListener("click", () => {
   handleHidden = !handleHidden;
-  console.log(handleHidden);
 
   if (handleHidden) {
     handleButton.elements.root.classList.add("hidden");
