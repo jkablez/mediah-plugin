@@ -80,7 +80,7 @@ class Page {
 
     return range.createContextualFragment(`
       <h1>Side Bar Tweaks Page 🔥🔥🔥🔥</h1>
-    `).firstElementChild;
+    `);
   }
 }
 
