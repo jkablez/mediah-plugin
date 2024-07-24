@@ -24,6 +24,8 @@ async function init() {
       this.sidebar = document.querySelector(".sidebar");
       this.isHandleGrab = getStorage("isHandleGrab");
 
+      console.log(this.isHandleGrab)
+
       this.elements.root.addEventListener("click", () => {
         if (this.isHandleGrab) {
           this.sidebar.style.left = "-270px";
@@ -55,7 +57,8 @@ async function init() {
 
   document.querySelector("#toggle-handle").addEventListener("click", () => {
     handleHidden = !handleHidden;
-    
+    console.log(handleHidden)
+
     if (handleHidden) {
       handleButton.elements.root.classList.add("hidden");
     } else {
