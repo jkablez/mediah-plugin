@@ -71,9 +71,9 @@ document.querySelector("#toggle-handle").addEventListener("click", () => {
   handleHidden = !handleHidden;
 
   if (handleHidden) {
-    handleButton.elements.root.classList.add("hidden");
+    handleButton.elements.root.classList.add("opacity-0");
   } else {
-    handleButton.elements.root.classList.remove("hidden");
+    handleButton.elements.root.classList.remove("opacity-0");
   }
 
   saveStorage("handleHidden", handleHidden);
