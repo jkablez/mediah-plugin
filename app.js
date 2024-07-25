@@ -82,6 +82,13 @@ class Page {
   constructor() {
     this.elements = {};
     this.elements.root = this.createRoot();
+
+    this.form = this.elements.root.querySelector("form");
+    this.form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const collapseWidth = this.elements.root.querySelector("#collapseWidth");
+      saveStorage("collapseWidth", collapseWidth.value || 10);
+    })
   }
 
   createRoot() {
@@ -93,6 +100,13 @@ class Page {
         <header class="flex sm:flex-row flex-col sm:items-center gap-2 justify-between">
             <h2 class="text-xl font-medium">Config</h2>
         </header>
+        <form class="space-y-4">
+            <div class="space-y-2">
+                <label for="collapseWidth" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Collapse Width</label>
+                <input id="collapseWidth" type="number" min="10" max="280" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            </div>
+            <button class="dark:bg-muted dark:disabled:bg-muted/90 bg-primary disabled:bg-primary/90 transition-all text-sm text-white font-medium h-9 inline-flex px-4 text-center justify-center rounded-md items-center">Change Password</button>
+        </form>
       </div>
     `);
   }
