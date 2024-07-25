@@ -94,6 +94,7 @@ class Page {
       if (getStorage("isHandleGrab")) {
         const marginLeft = 0 - (sideBarWidth - parseFloat(collapseWidth.value) || 10);
         document.querySelector(".sidebar").style.left = `${marginLeft}px`;
+        document.body.querySelector(".content").style.marginLeft = `${collapseWidth.value}px`;
       }
     })
   }
