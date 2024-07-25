@@ -50,7 +50,6 @@ class Handle {
   setWidth() {
     const sideBarWidth = 280;
     const collapseWidth = parseFloat(getStorage("collapseWidth")) || 10;
-    console.log(collapseWidth)
     const marginLeft = 0 - (sideBarWidth - collapseWidth);
     if (this.isHandleGrab) {
       this.sidebar.style.left = `${marginLeft}px`;
@@ -88,7 +87,6 @@ class Page {
     this.form.addEventListener("submit", (event) => {
       event.preventDefault();
       const collapseWidth = this.form.querySelector("#collapseWidth");
-      console.log(collapseWidth)
       saveStorage("collapseWidth", parseFloat(collapseWidth.value) || 10);
     })
   }
@@ -98,20 +96,18 @@ class Page {
     range.selectNode(document.body);
 
     return range.createContextualFragment(`
-      <div class="flex flex-col w-full gap-4"> 
-        <div class="p-4">
-          <header class="flex sm:flex-row flex-col sm:items-center gap-2 justify-between">
-              <h2 class="text-xl font-medium">Config</h2>
-          </header>
-          <div class="w-full bg-background border border-border p-4 rounded-lg shadow-sm space-y-4">
-            <form class="space-y-4">
-                <div class="space-y-2">
-                    <label for="collapseWidth" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Collapse Width</label>
-                    <input id="collapseWidth" type="number" min="10" max="280" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                </div>
-                <button type="submit" class="dark:bg-muted dark:disabled:bg-muted/90 bg-primary disabled:bg-primary/90 transition-all text-sm text-white font-medium h-9 inline-flex px-4 text-center justify-center rounded-md items-center">Save</button>
-            </form>
-          </div>
+      <div class="flex p-4 flex-col w-full gap-4"> 
+        <header class="flex sm:flex-row flex-col sm:items-center gap-2 justify-between">
+            <h2 class="text-xl font-medium">Config</h2>
+        </header>
+        <div class="w-full bg-background border border-border p-4 rounded-lg shadow-sm space-y-4">
+          <form class="space-y-4">
+              <div class="space-y-2">
+                  <label for="collapseWidth" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Collapse Width</label>
+                  <input id="collapseWidth" type="number" min="10" max="280" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+              </div>
+              <button type="submit" class="dark:bg-muted dark:disabled:bg-muted/90 bg-primary disabled:bg-primary/90 transition-all text-sm text-white font-medium h-9 inline-flex px-4 text-center justify-center rounded-md items-center">Save</button>
+          </form>
         </div>
       </div>
     `);
