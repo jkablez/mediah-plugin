@@ -48,12 +48,17 @@ class Handle {
   }
 
   setWidth() {
+    const sideBarWidth = 280;
+    const collapseWidth = 10;
+    const marginLeft = 0 - (sideBarWidth - collapseWidth);
     if (this.isHandleGrab) {
-      this.sidebar.style.left = "-270px";
+      this.sidebar.style.left = `${marginLeft}px`;
       this.sidebar.style.position = "absolute";
+      document.body.querySelector(".content").style.marginLeft = `${collapseWidth}px`;
     } else {
       this.sidebar.style.left = "";
       this.sidebar.style.position = "";
+      document.body.querySelector(".content").style.marginLeft = "0px";
     }
   }
 }
