@@ -88,7 +88,7 @@ class Page {
       event.preventDefault();
       const collapseWidth = this.form.querySelector("#collapseWidth");
       saveStorage("collapseWidth", parseFloat(collapseWidth.value) || 10);
-      this.showAlert("Save Collapse Width", "success");
+      showAlert("Save Collapse Width", "success");
     })
   }
 
