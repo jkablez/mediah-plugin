@@ -122,4 +122,20 @@ class Page {
   }
 }
 
-newPage("/config", "Side Bar Tweaks", Page);
+class Page {
+  constructor() {
+    this.elements = {};
+    this.elements.root = this.createRoot();
+  }
+
+  createRoot() {
+    const range = document.createRange();
+    range.selectNode(document.body);
+
+    return range.createContextualFragment(`
+      <h1>Hello World</h1>
+    `);
+  }
+}
+
+newPage("/config", "Side Bar Tweaks - Config", Page);
