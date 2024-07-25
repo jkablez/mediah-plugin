@@ -49,7 +49,7 @@ class Handle {
 
   setWidth() {
     const sideBarWidth = 280;
-    const collapseWidth = 10;
+    const collapseWidth = parseFloat(getStorage("collapseWidth")) || 10;
     const marginLeft = 0 - (sideBarWidth - collapseWidth);
     if (this.isHandleGrab) {
       this.sidebar.style.left = `${marginLeft}px`;
