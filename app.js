@@ -57,8 +57,8 @@ class Handle {
       this.sidebar.style.position = "absolute";
       document.body.querySelector(".content").style.marginLeft = `${collapseWidth}px`;
     } else {
-      this.sidebar.style.left = "";
-      this.sidebar.style.position = "";
+      this.sidebar.style.left = "0px";
+      this.sidebar.style.position = "relative";
       document.body.querySelector(".content").style.marginLeft = "0px";
     }
   }
