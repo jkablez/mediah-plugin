@@ -86,8 +86,9 @@ class Page {
     this.form = this.elements.root.querySelector("form");
     this.form.addEventListener("submit", (event) => {
       event.preventDefault();
-      const collapseWidth = this.elements.root.querySelector("#collapseWidth");
-      saveStorage("collapseWidth", collapseWidth.value || 10);
+      const collapseWidth = this.form.querySelector("#collapseWidth");
+      console.log(collapseWidth)
+      saveStorage("collapseWidth", parseFloat(collapseWidth.value) || 10);
     })
   }
 
