@@ -84,7 +84,11 @@ class Page {
     range.selectNode(document.body);
 
     return range.createContextualFragment(`
-      <h1>Side Bar Tweaks Page 🔥🔥🔥🔥</h1>
+      <div class="p-4">
+        <header class="flex sm:flex-row flex-col sm:items-center gap-2 justify-between">
+            <h2 class="text-xl font-medium">Config</h2>
+        </header>
+      </div>
     `);
   }
 }
