@@ -16,6 +16,8 @@ if (location.pathname === "/dashboard") {
   this.showAlert("Injected Side Bar Tweaks!", "success");
 }
 
+const sideBarWidth = 280;
+
 class Handle {
   constructor(site) {
     this.site = site;
@@ -48,7 +50,6 @@ class Handle {
   }
 
   setWidth() {
-    const sideBarWidth = 280;
     const collapseWidth = parseFloat(getStorage("collapseWidth")) || 10;
     const marginLeft = 0 - (sideBarWidth - collapseWidth);
     if (this.isHandleGrab) {
@@ -89,6 +90,11 @@ class Page {
       const collapseWidth = this.form.querySelector("#collapseWidth");
       saveStorage("collapseWidth", parseFloat(collapseWidth.value) || 10);
       showAlert("Saved Collapsed Width", "success");
+
+      if (this.isHandleGrab) {
+        const marginLeft = 0 - (sideBarWidth - parseFloat(collapseWidth.value) || 10);
+        this.sidebar.style.left = `${marginLeft}px`;
+      }
     })
   }
 
