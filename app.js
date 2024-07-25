@@ -91,7 +91,7 @@ class Page {
       saveStorage("collapseWidth", parseFloat(collapseWidth.value) || 10);
       showAlert("Saved Collapsed Width", "success");
 
-      if (this.isHandleGrab) {
+      if (getStorage("isHandleGrab")) {
         const marginLeft = 0 - (sideBarWidth - parseFloat(collapseWidth.value) || 10);
         this.sidebar.style.left = `${marginLeft}px`;
       }
