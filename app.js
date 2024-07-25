@@ -93,7 +93,7 @@ class Page {
 
       if (getStorage("isHandleGrab")) {
         const marginLeft = 0 - (sideBarWidth - parseFloat(collapseWidth.value) || 10);
-        this.sidebar.style.left = `${marginLeft}px`;
+        document.querySelector(".sidebar").style.left = `${marginLeft}px`;
       }
     })
   }
