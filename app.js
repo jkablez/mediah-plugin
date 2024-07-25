@@ -41,7 +41,7 @@ class Handle {
     range.selectNode(document.body);
 
     return range.createContextualFragment(`
-          <button class="h-6 cursor-pointer text-muted-foreground rounded-md bg-background border flex items-center justify-center absolute -right-2 top-0 bottom-0 my-auto ${this.site.handleHidden ? 'hidden' : ''}">
+          <button class="h-6 cursor-pointer hover:text-foreground transition-colors text-muted-foreground rounded-md bg-background border flex items-center justify-center absolute -right-2 top-0 bottom-0 my-auto ${this.site.handleHidden ? 'hidden' : ''}">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>
           </button>
       `).firstElementChild;
