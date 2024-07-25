@@ -97,7 +97,7 @@ class Page {
     range.selectNode(document.body);
 
     return range.createContextualFragment(`
-      <div class="flex sm:flex-row flex-col w-full my-6 gap-4"> 
+      <div class="flex flex-col w-full my-6 gap-4"> 
         <div class="p-4">
           <header class="flex sm:flex-row flex-col sm:items-center gap-2 justify-between">
               <h2 class="text-xl font-medium">Config</h2>
