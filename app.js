@@ -35,7 +35,9 @@ class Handle {
 
     this.setWidth();
 
-    this.sidebar.appendChild(this.elements.root);
+    if (this.sidebar) {
+      this.sidebar.appendChild(this.elements.root);
+    }
   }
 
   createRoot() {
