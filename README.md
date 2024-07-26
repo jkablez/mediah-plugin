@@ -2,9 +2,12 @@
 
 Adds the ability to shrink the sidebar on desktop
 
-Toggle Handle => Shows and hides collapser and expander
+Explained in code 👍
 
-Config => Custom config page for the `collapse width`
+```javascript
+const toggleHandle = toggleHandleView();
+const config = site.push("/config");
+```
 
 - Expand and Collapse
 - Add custom links to files
